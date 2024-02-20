@@ -70,3 +70,21 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 1000);
 
 });
+
+// Click Effect Experiment
+
+document.onclick = (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+
+  let image = document.createElement("img");
+  image.classList.add("click_effect");
+  image.setAttribute('src', 'hit-effect.png')
+  image.style.top = y + "px";
+  image.style.left = x + "px";
+  document.body.appendChild(image);
+
+  setTimeout(() => {
+    image.remove();
+  }, 200)
+}
